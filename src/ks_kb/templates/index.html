@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Home{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ message }}</p>
+</div>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>✅ Working Template</h3>
+        <p>This is a fully functional FastAPI application ready to customize</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🚀 Quick Start</h3>
+        <p>Run <code>.\scripts\help.ps1</code> to see all available commands</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📖 API Documentation</h3>
+        <p>Visit <a href="/api/docs">/api/docs</a> for interactive API documentation</p>
+    </div>
+</section>
+
+<section class="next-steps">
+    <h2>Next Steps</h2>
+    <ol>
+        <li>Update <strong>PROJECT_NAME</strong> and <strong>PROJECT_DESCRIPTION</strong> throughout the codebase</li>
+        <li>Delete the example endpoint in <code>ks_kb/api/routes_api.py</code></li>
+        <li>Add your business logic in <code>ks_kb/domain/</code></li>
+        <li>Define your data models in <code>ks_kb/models/schemas.py</code></li>
+        <li>Create workflows in <code>ks_kb/workflows/</code></li>
+        <li>Write tests in <code>tests/</code></li>
+    </ol>
+</section>
+{% endblock %}
