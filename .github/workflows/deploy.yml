@@ -1,0 +1,24 @@
+name: Google Cloud Auth
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  check-connection:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: 'actions/checkout@v4'
+
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v3'
+        with:
+          project_id: 'leadgen-483623'
+          workload_identity_provider: 'projects/919930788486/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          service_account: 'leadgen@leadgen-483623.iam.gserviceaccount.com'
+
+      - name: 'Verify Login'
+        run: 'gcloud auth list'
